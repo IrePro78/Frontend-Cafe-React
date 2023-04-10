@@ -88,24 +88,20 @@ const Register = () => {
           withCredentials: true
         }
       );
-      console.log(response?.data);
-      // console.log(response?.accessToken);
-      console.log(JSON.stringify(response))
-      setSuccess(true);
       //clear state and controlled inputs
-      //need value attrib on inputs for this
+      setSuccess(true);
 
       setUser('');
       setEmail('');
       setContactNumber('');
       setPassword('');
       setMatchPassword('');
-    } catch (err) {
-      if (!err) {
-      //   setErrMsg('No Server Response');
-      // } else if (err.response?.status === 409) {
-      //   setErrMsg('Username Taken');
-      // } else {
+    } catch (err: any ) {
+      if (!err?.response) {
+        setErrMsg('No Server Response');
+      } else if (err.response?.status === 409) {
+        setErrMsg('Email Taken');
+      } else {
         setErrMsg('Registration Failed')
       }
       errRef.current.focus();
@@ -252,7 +248,7 @@ const Register = () => {
             Already registered?<br />
             <span className="line">
                             {/*put router link here*/}
-              <a href="#">Sign In</a>
+              <a href="">Sign In</a>
                         </span>
           </p>
         </section>
