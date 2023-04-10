@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "types": ["../Backend-Cafe-Nestjs/types/"],
+      "types": ["../Backend-Cafe-Nestjs/types"]
     }
   }
 }

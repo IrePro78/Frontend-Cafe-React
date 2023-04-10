@@ -1,8 +1,32 @@
-import React, { useState } from "react";
-import {} from 'types'
+import React, { useEffect, useState } from "react";
+import {User} from 'types'
+import axios from "../api/axios";
 
 const Users = () => {
-  const [users, setUsers] = useState<>();
+  const [users, setUsers] = useState<User[]>();
+  useEffect(() => {
+    let isMounted = true;
+    const controller = new AbortController();
+
+    const getUsers = async (): Promise<any> => {
+      try {
+        const response = await axios.get('/user/getUsers', {
+          signal: controller.signal
+        });
+        console.log(response.data);
+        isMounted && setUsers(response.data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    getUsers();
+
+    return () => {
+      isMounted = false;
+      controller.abort();
+    }
+
+  }, [])
 
   return (
     <article>
