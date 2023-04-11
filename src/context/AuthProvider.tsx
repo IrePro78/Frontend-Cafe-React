@@ -12,6 +12,7 @@ const AuthContext = createContext<ContextAuth>({
     password: "",
     role: "",
     access_token: "",
+    refresh_token: "",
   },
   setAuth: () => {},
 });
@@ -22,6 +23,7 @@ export const AuthProvider = ({ children }: any) => {
     password: "",
     role: "",
     access_token: "",
+    refresh_token: "",
   });
 
   return (

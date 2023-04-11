@@ -15,6 +15,7 @@ const Home = () => {
       password: "",
       role: "",
       access_token: "",
+      refresh_token: "",
     });
     navigate("/linkpage");
   };

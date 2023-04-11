@@ -10,12 +10,11 @@ const Users = () => {
     let isMounted = true;
     const controller = new AbortController();
 
-    const getUsers = async (): Promise<any> => {
+    const getUsers = async ()  => {
       try {
         const response = await axiosPrivate.get("/user/getUsers", {
           signal: controller.signal,
         });
-        console.log(response.data);
         isMounted && setUsers(response.data);
       } catch (err) {
         console.log(err);

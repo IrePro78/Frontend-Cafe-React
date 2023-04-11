@@ -42,8 +42,9 @@ const Login = () => {
         }
       );
       const access_token = response?.data?.access_token;
+      const refresh_token = response?.data?.refresh_token;
       const role = response?.data?.role;
-      setAuth({ email, password, role, access_token });
+      setAuth({ email, password, role, access_token, refresh_token });
       setEmail("");
       setPassword("");
       navigate(from, { replace: true });

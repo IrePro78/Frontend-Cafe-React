@@ -9,8 +9,6 @@ const RequireAuth = ({ allowedRoles }: Props) => {
   const { auth } = useAuth();
   const location = useLocation();
 
-  console.log(auth);
-
   return [auth?.role].find((role: string) => allowedRoles?.includes(role)) ? (
     <Outlet />
   ) : auth?.email ? (
