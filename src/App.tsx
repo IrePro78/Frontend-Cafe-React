@@ -24,6 +24,7 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="linkpage" element={<LinkPage />} />
         <Route path="unauthorized" element={<Unauthorized />} />
+        <Route path="/" element={<Home />} />
 
         {/* we want to protect these routes */}
         <Route

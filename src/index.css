@@ -14,7 +14,17 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: dodgerblue;
+  background-color: #ef5360;
+}
+
+.nav {
+  background-color: #ef5360;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
 }
 
 .App {
