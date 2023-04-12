@@ -5,7 +5,6 @@ import * as React from "react";
 
 const Admin = () => {
   return (
-    <>
       <section>
         <h1>Admins Page</h1>
         <br />
@@ -15,7 +14,6 @@ const Admin = () => {
           <Link to="/">Home</Link>
         </div>
       </section>
-    </>
   );
 };
 
