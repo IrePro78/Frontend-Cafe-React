@@ -1,4 +1,4 @@
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, Outlet } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../context/AuthProvider";
 
@@ -17,22 +17,22 @@ const Home = () => {
       access_token: "",
       refresh_token: "",
     });
-    navigate("/linkpage");
+    navigate("/login");
   };
 
   return (
-    <section>
-      <h1>Home</h1>
-      <br />
-      <p>You are logged in!</p>
-      <br />
-      <Link to="/admin">Go to the Admin page</Link>
-      <br />
-      <Link to="/linkpage">Go to the link page</Link>
-      <div className="flexGrow">
-        <button onClick={logout}>Sign Out</button>
-      </div>
-    </section>
+    <>
+      <section>
+        <h1>Home</h1>
+        <br />
+        <p>You are logged in!</p>
+        <br />
+        <Link to="/admin">Go to the Admin page</Link>
+        <div className="flexGrow">
+          <button onClick={logout}>Sign Out</button>
+        </div>
+      </section>
+    </>
   );
 };
 
